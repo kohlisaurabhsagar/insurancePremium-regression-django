@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{%block title%} Home {% endblock title%}
+
+{%block body%}
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-20 md:flex-row flex-col items-center">
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-5xl font-bold mb-4 font-medium text-gray-900">Welcome to InsureCast - Your Trusted Insurance Cost Prediction Website</h1>
+      
+      <p class="mb-8 text-xl leading-relaxed">Are you tired of navigating through endless insurance quotes, unsure of which policy fits your needs and budget? Say goodbye to uncertainty with InsureCast, the cutting-edge insurance cost prediction platform that empowers you to make informed decisions about your insurance coverage.</p>
+      <div style="position: absolute; top: 550px; left: 280px;">
+        <a href="{% url 'prediction' %}" class="btn btn-primary"><button style="display: inline-flex; align-items: center; justify-content: center; text-align: center; background-color: indigo; color: white; border: none; padding: 24px 48px; font-size: 32px; border-radius: 8px; cursor: pointer;">
+          Get Insurance Cost
+        </button></a>
+      </div>
+      </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+      <img class="object-cover"  src="/static/img1.png" alt="hero">
+    </div>
+  </div>
+</section>
+<h6 class="text-6xl font-bold text-center text-indigo-700 my-8 ml-14">Why Choose InsureCast?</h6>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-5 mx-auto">
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+      <div class="sm:w-32 sm:h-32 h-24 w-24 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+        <img class="sm:w-16 sm:h-16 w-24 h-24" src="/static/img2.png" alt="Image Alt Text">
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-gray-900 text-2xl title-font font-medium mb-2"><b>Budget Wisely</b></h2>
+        <p class="leading-relaxed text-xl text-base">Avoid surprises and allocate funds effectively by having a clear understanding of your insurance expenses.</p>
+      </div>
+    </div>
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col ml-9">
+      <div class="sm:w-32 sm:h-32 h-24 w-24 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+        <img class="sm:w-16 sm:h-16 w-24 h-24" src="/static/img3.png" alt="Image Alt Text">
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-gray-900 text-2xl title-font font-medium mb-2"><b>Avoid Overpaying</b></h2>
+        <p class="leading-relaxed text-xl text-base">Get rid of the guesswork and ensure you're not paying more than necessary for your coverage.</p>
+      </div>
+    </div>    
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+      <div class="sm:w-32 sm:h-32 h-24 w-24 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+        <img class="sm:w-16 sm:h-16 w-24 h-24" src="/static/img4.png" alt="Image Alt Text">
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-gray-900 text-2xl title-font font-medium mb-2"><b>Find the Perfect Fit</b></h2>
+        <p class="leading-relaxed text-xl text-base">Identify policies that match your unique needs and preferences while staying within your budget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{%endblock body%}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{%block title%} Prediction {% endblock title%}
+
+{% block body%}
+<div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded shadow-md w-80">
+        <h2 class="text-2xl font-bold mb-6">Get Insurance Cost</h2>
+            {% if output %}
+            <h1><b>Your Insurance Cost is : ${{output}} </b></h1>
+            {% endif %}
+        <form method = "POST" action="/prediction">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="age">Age:</label>
+                <input class="w-full px-3 py-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" type="number" id="age" name="age" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="sex">Sex:</label>
+                <select class="w-full px-3 py-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" id="sex" name="sex" required>
+                    <option value="" disabled selected>Select Sex</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="bmi">BMI:</label>
+                <input class="w-full px-3 py-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" type="number" id="bmi" name="bmi" step="0.05" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="children">Children:</label>
+                <input class="w-full px-3 py-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" type="number" id="children" name="children" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="smoker">Smoker:</label>
+                <select class="w-full px-3 py-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" id="smoker" name="smoker" required>
+                    <option value="" disabled selected>Select Smoker</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="region">Region:</label>
+                <select class="w-full px-3 py-1 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" id="region" name="region" required>
+                    <option value="" disabled selected>Select Region</option>
+                    <option value="1">South West</option>
+                    <option value="2">South East</option>
+                    <option value="3">North West</option>
+                    <option value="4">North East</option> 
+                </select>
+            </div>
+
+            <button class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500" type="submit">Predict Cost!!!</button>
+        </form>
+    </div>
+</div>
+{% endblock body%}
