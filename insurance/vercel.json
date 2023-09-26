@@ -8,7 +8,7 @@
     "routes" : [
         {
             "src":"/(.*)",
-            "dest":"insurance/wsgi/py"
+            "dest":"insurance/wsgi.py"
         }
     ]
 }
