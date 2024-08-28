@@ -3,53 +3,51 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block  title %}  {% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>{% block title %} {% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-  <body class = "bg-gray-300">
-    <header class="p-4 bg-dark">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-between">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none fs-3">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+  <body class="bg-gray-300">
+    <header class="p-4 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap items-center justify-between">
+                <a href="/" class="flex items-center mb-2 lg:mb-0 text-white text-decoration-none text-3xl">
+                    <svg class="mr-2" width="40" height="32" role="img" aria-label="Bootstrap">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
-                    <span class="fw-bold">InsureCast</span>
+                    <span class="font-bold">InsureCast</span>
                 </a>
     
-                <ul class="nav d-flex flex-column flex-lg-row mb-2 justify-content-center mb-md-0">
+                <ul class="nav flex flex-col lg:flex-row mb-2 justify-center md:mb-0">
                     <li class="nav-item">
-                        <a href="/" class="nav-link px-3 text-white">Home</a>
+                        <a href="/" class="px-3 text-white">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/prediction" class="nav-link px-3 text-white">Prediction</a>
+                        <a href="/prediction" class="px-3 text-white">Prediction</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
     
-    
+    {% block body %} {% endblock %}
 
-     {% block body %} {% endblock %}
-
-
-      <hr>
-      <footer class="text-gray-600 body-font">
-        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <hr class="border-gray-400 my-8">
+    <footer class="text-gray-600 body-font">
+        <div class="container mx-auto px-5 py-8 flex items-center flex-col sm:flex-row">
             <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
                 <span class="ml-3 text-xl">Insurance Cost Predictor</span>
             </a>
-            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 made by —
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                © 2023 made by —
                 <a href="#" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">kohlisaurabh</a>
             </p>
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                 <a href="https://github.com/yourusername" class="text-gray-500">
-                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <svg fill="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                     </svg>
                 </a>
@@ -73,7 +71,5 @@
             </span>
         </div>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
 </html>
