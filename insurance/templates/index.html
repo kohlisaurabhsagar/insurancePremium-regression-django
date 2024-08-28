@@ -1,63 +1,76 @@
 {% extends 'base.html' %}
 
-{% block title %} Prediction {% endblock title %}
+{% block title %} Home {% endblock title %}
 
 {% block body %}
-<div class="min-h-screen flex items-center justify-center bg-gray-100">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 class="text-2xl font-bold text-center mb-6">Get Insurance Cost</h2>
-        {% if output %}
-            <h1 class="text-lg text-center font-semibold mb-4"><b>Your Insurance Cost is: ${{ output }} </b></h1>
-        {% endif %}
-        <form method="POST" action="/prediction">
-            {% csrf_token %}
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="age">Age:</label>
-                <input class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" type="number" id="age" name="age" required>
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="sex">Sex:</label>
-                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" id="sex" name="sex" required>
-                    <option value="" disabled selected>Select Sex</option>
-                    <option value="1">Male</option>
-                    <option value="0">Female</option>
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="bmi">BMI:</label>
-                <input class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" type="number" id="bmi" name="bmi" step="0.05" required>
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="children">Children:</label>
-                <input class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" type="number" id="children" name="children" required>
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="smoker">Smoker:</label>
-                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" id="smoker" name="smoker" required>
-                    <option value="" disabled selected>Select Smoker</option>
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="region">Region:</label>
-                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" id="region" name="region" required>
-                    <option value="" disabled selected>Select Region</option>
-                    <option value="1">South West</option>
-                    <option value="2">South East</option>
-                    <option value="3">North West</option>
-                    <option value="4">North East</option>
-                </select>
-            </div>
-
-            <button class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500" type="submit">Predict Cost!</button>
-        </form>
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-col md:flex-row items-center px-5 py-20">
+    <div class="md:w-1/2 lg:w-1/2 w-full md:pr-12 flex flex-col items-center md:text-left mb-8 md:mb-0 text-center">
+      <h1 class="title-font sm:text-4xl text-3xl font-bold mb-4 text-gray-900">
+        Welcome to InsureCast - Your Trusted Insurance Cost Prediction Website
+      </h1>
+      <p class="mb-8 text-lg leading-relaxed">
+        Are you tired of navigating through endless insurance quotes, unsure of which policy fits your needs and budget? Say goodbye to uncertainty with InsureCast, the cutting-edge insurance cost prediction platform that empowers you to make informed decisions about your insurance coverage.
+      </p>
+      <a href="{% url 'prediction' %}" class="inline-flex items-center justify-center bg-indigo-500 text-white font-medium rounded-lg text-lg py-3 px-6 hover:bg-indigo-600 transition-colors duration-200">
+        Get Insurance Cost
+      </a>
     </div>
-</div>
-{% endblock body %}
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+      <img class="object-cover w-full h-auto" src="/static/img1.png" alt="hero">
+    </div>
+  </div>
+</section>
 
+<h6 class="text-4xl font-bold text-center text-indigo-700 my-8">Why Choose InsureCast?</h6>
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-5 mx-auto">
+    <div class="flex flex-wrap -m-4">
+
+      <div class="p-4 md:w-1/3">
+        <div class="bg-white p-6 rounded-lg">
+          <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500">
+            <img class="w-12 h-12" src="/static/img2.png" alt="Budget Wisely">
+          </div>
+          <h2 class="text-2xl font-medium title-font text-gray-900 mt-4">
+            <b>Budget Wisely</b>
+          </h2>
+          <p class="leading-relaxed text-base mt-2">
+            Avoid surprises and allocate funds effectively by having a clear understanding of your insurance expenses.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="bg-white p-6 rounded-lg">
+          <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500">
+            <img class="w-12 h-12" src="/static/img3.png" alt="Avoid Overpaying">
+          </div>
+          <h2 class="text-2xl font-medium title-font text-gray-900 mt-4">
+            <b>Avoid Overpaying</b>
+          </h2>
+          <p class="leading-relaxed text-base mt-2">
+            Get rid of the guesswork and ensure you're not paying more than necessary for your coverage.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/3">
+        <div class="bg-white p-6 rounded-lg">
+          <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500">
+            <img class="w-12 h-12" src="/static/img4.png" alt="Find the Perfect Fit">
+          </div>
+          <h2 class="text-2xl font-medium title-font text-gray-900 mt-4">
+            <b>Find the Perfect Fit</b>
+          </h2>
+          <p class="leading-relaxed text-base mt-2">
+            Identify policies that match your unique needs and preferences while staying within your budget.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock body %}
